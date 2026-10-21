@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineBook - Find my booking</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">Cine<span>Book</span></a><nav class="nav"><a class="navlink" href="/find.html">Find my booking</a><a class="navlink" href="/login.html">Staff login</a></nav></header>
+  <main class="container narrow">
+    <h1>Find my booking</h1>
+    <section class="card">
+      <p class="empty">Enter your booking code and the email you used at checkout to see your tickets or cancel a booking.</p>
+      <p id="find-notice" class="notice" hidden></p>
+      <form id="find-form" novalidate>
+        <div class="field">
+          <label for="code">Booking code</label>
+          <input id="code" name="code" type="text" placeholder="CB-XXXXXX" autocomplete="off" maxlength="14">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="150">
+        </div>
+        <p id="find-error" class="notice bad" hidden></p>
+        <button id="find-btn" class="btn" type="submit">Find booking</button>
+      </form>
+      <p class="hint">Trying the demo? Use <code>CB-DEMO01</code> with <code>demo@cinebook.test</code>.</p>
+    </section>
+  </main>
+  <script src="/js/util.js"></script>
+  <script src="/js/find.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "cinebook",
+  "version": "1.0.0",
+  "description": "CineBook - a cinema ticketing system (seat map, booking, QR tickets)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node sql/seed.js",
+    "reset": "node sql/seed.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6",
+    "qrcode": "^1.5.4"
+  }
+}

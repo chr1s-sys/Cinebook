@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineBook - Choose your seats</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">Cine<span>Book</span></a><nav class="nav"><a class="navlink" href="/find.html">Find my booking</a><a class="navlink" href="/login.html">Staff login</a></nav></header>
+  <main class="container">
+    <a class="back" href="/">&larr; All movies</a>
+
+    <div id="show-info"><p class="empty">Loading seat map...</p></div>
+
+    <div class="screen-wrap">
+      <div class="screen"></div>
+      <div class="screen-label">SCREEN</div>
+    </div>
+
+    <div class="hall"><div id="seat-grid" class="seat-grid"></div></div>
+
+    <div class="legend">
+      <span><i class="swatch free"></i>Available</span>
+      <span><i class="swatch taken"></i>Taken</span>
+      <span><i class="swatch selected"></i>Your selection</span>
+    </div>
+
+    <div class="summary">
+      <div>
+        <div id="selected-text">Pick your seats</div>
+        <div id="total" class="total"></div>
+      </div>
+      <button id="continue-btn" class="btn" type="button" disabled>Continue to checkout</button>
+    </div>
+    <p id="seat-message" class="notice" hidden></p>
+  </main>
+  <script src="/js/util.js"></script>
+  <script src="/js/seats.js"></script>
+</body>
+</html>

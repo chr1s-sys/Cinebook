@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineBook - Ticket checker</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">Cine<span>Book</span></a><nav class="nav" id="user-bar"></nav></header>
+  <main class="container narrow">
+    <div id="page" hidden>
+      <h1>Ticket checker</h1>
+      <section class="card">
+        <p class="empty">Scan a customer's QR code, or type the <strong>ticket code</strong> (TK-...) printed under it. No QR? Type the customer's <strong>booking code</strong> (CB-...) to see their tickets and let them in. A ticket works once.</p>
+        <form id="check-form" novalidate>
+          <div class="field">
+            <label for="ticket_code">Ticket code or booking code</label>
+            <input id="ticket_code" type="text" placeholder="TK-ABCD2345 or CB-ABC123" autocomplete="off" maxlength="20">
+          </div>
+          <button id="check-btn" class="btn" type="submit">Check</button>
+        </form>
+      </section>
+      <div id="verdict" class="verdict" hidden></div>
+      <div id="booking-panel" class="booking-panel" hidden></div>
+      <section class="card walkin">
+        <h2>Walk-in customers</h2>
+        <p class="empty">For a customer paying at the counter, open the normal booking pages and book on their behalf: choose the movie, showtime and seats, then enter their details.</p>
+        <a class="btn secondary" href="/">Open the booking pages</a>
+      </section>
+    </div>
+  </main>
+  <script src="/js/util.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/staff.js"></script>
+</body>
+</html>

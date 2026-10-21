@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineBook - Admin</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">Cine<span>Book</span></a><nav class="nav" id="user-bar"></nav></header>
+  <main class="container">
+    <div id="page" hidden>
+      <h1>Admin</h1>
+
+      <div class="grid-2">
+        <section class="card">
+          <h2>Add a movie</h2>
+          <form id="movie-form" novalidate>
+            <div class="field" id="field-title"><label for="title">Title</label><input id="title" type="text" maxlength="150" autocomplete="off"><div class="msg"></div></div>
+            <div class="field" id="field-genre"><label for="genre">Genre</label><input id="genre" type="text" maxlength="50" autocomplete="off"><div class="msg"></div></div>
+            <div class="two-cols">
+              <div class="field" id="field-duration_min"><label for="duration_min">Length (minutes)</label><input id="duration_min" type="number" min="1" max="600" step="1"><div class="msg"></div></div>
+              <div class="field" id="field-rating"><label for="rating">Rating</label>
+                <select id="rating">
+                  <option value="">Choose...</option>
+                  <option>G</option><option>PG</option><option>R-13</option><option>R-16</option><option>R-18</option>
+                </select><div class="msg"></div></div>
+            </div>
+            <div class="field" id="field-synopsis"><label for="synopsis">Synopsis (optional)</label><textarea id="synopsis" rows="3" maxlength="1000"></textarea><div class="msg"></div></div>
+            <p id="movie-error" class="notice bad" hidden></p>
+            <p id="movie-ok" class="notice good" hidden></p>
+            <button id="movie-btn" class="btn" type="submit">Add movie</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Add a showtime</h2>
+          <form id="show-form" novalidate>
+            <div class="field" id="field-movie_id"><label for="movie_id">Movie</label><select id="movie_id"><option value="">Choose...</option></select><div class="msg"></div></div>
+            <div class="field" id="field-hall_id"><label for="hall_id">Cinema</label><select id="hall_id"><option value="">Choose...</option></select><div class="msg"></div></div>
+            <div class="two-cols">
+              <div class="field" id="field-starts_at"><label for="starts_at">Date and time</label><input id="starts_at" type="datetime-local"><div class="msg"></div></div>
+              <div class="field" id="field-price"><label for="price">Price per seat (₱)</label><input id="price" type="number" min="0" step="0.01" placeholder="300"><div class="msg"></div></div>
+            </div>
+            <p id="show-error" class="notice bad" hidden></p>
+            <p id="show-ok" class="notice good" hidden></p>
+            <button id="show-btn" class="btn" type="submit">Add showtime</button>
+          </form>
+        </section>
+      </div>
+
+      <section class="card">
+        <h2>Showtimes</h2>
+        <div class="table-wrap">
+          <table class="table" id="showtimes-table">
+            <thead><tr><th>Movie</th><th>Cinema</th><th>When</th><th>Price</th><th>Seats sold</th><th>Status</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Movies</h2>
+        <div class="table-wrap">
+          <table class="table" id="movies-table">
+            <thead><tr><th>Title</th><th>Genre</th><th>Length</th><th>Rating</th><th>Showtimes</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="/js/util.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
